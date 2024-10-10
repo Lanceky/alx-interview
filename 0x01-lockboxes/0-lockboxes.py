@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Module for the canUnlockAll function."""
+"""Module for solving the Lockboxes problem."""
 
 
 def canUnlockAll(boxes):
@@ -7,14 +7,15 @@ def canUnlockAll(boxes):
     Determine if all boxes can be opened.
 
     Args:
-    boxes (list of lists): A list of boxes, where each box contains keys to other boxes.
+        boxes (list of lists): A list of boxes, where each box contains
+                               keys to other boxes.
 
     Returns:
-    bool: True if all boxes can be opened, False otherwise.
+        bool: True if all boxes can be opened, False otherwise.
     """
     n = len(boxes)
-    unlocked = set([0])  
-    keys = set(boxes[0])
+    unlocked = set([0])  # Start with the first box unlocked
+    keys = set(boxes[0])  # Initialize with keys from the first box
 
     while keys:
         new_key = keys.pop()
