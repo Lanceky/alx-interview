@@ -44,4 +44,4 @@ def island_perimeter(grid):
                 # Add the remaining sides to the perimeter
                 perimeter += sides
 
-    return perimeter
+    return (perimeter)
