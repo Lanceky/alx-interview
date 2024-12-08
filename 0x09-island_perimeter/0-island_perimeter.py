@@ -17,32 +17,28 @@ def island_perimeter(grid):
     """
     perimeter = 0
 
-    # Iterate through each cell in the grid
-    for row in range(len(grid)):
-        for col in range(len(grid[row])):
-            # Check if current cell is land
-            if grid[row][col] == 1:
-                # Start with 4 sides for each land cell
+    for row_index in range(len(grid)):
+        for col_index in range(len(grid[row_index])):
+            if grid[row_index][col_index] == 1:
                 sides = 4
 
-                # Check adjacent cells and reduce sides accordingly
                 # Check cell above
-                if row > 0 and grid[row-1][col] == 1:
+                if row_index > 0 and grid[row_index - 1][col_index] == 1:
                     sides -= 1
-                
+
                 # Check cell below
-                if row < len(grid) - 1 and grid[row+1][col] == 1:
+                if row_index < len(grid) - 1 and grid[row_index + 1][col_index] == 1:
                     sides -= 1
-                
+
                 # Check cell to the left
-                if col > 0 and grid[row][col-1] == 1:
+                if col_index > 0 and grid[row_index][col_index - 1] == 1:
                     sides -= 1
-                
+
                 # Check cell to the right
-                if col < len(grid[row]) - 1 and grid[row][col+1] == 1:
+                if col_index < len(grid[row_index]) - 1 and \
+                   grid[row_index][col_index + 1] == 1:
                     sides -= 1
-                
-                # Add the remaining sides to the perimeter
+
                 perimeter += sides
 
     return perimeter
